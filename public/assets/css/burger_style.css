@@ -1,2 +1,24 @@
 
-img, h1 {align-items: center;}
+body {
+	background-color: #FFFDCE
+}
+
+h1 {text-align: center;}
+
+img {
+    display: block;
+    margin: auto;
+    width: 33%;
+}
+
+#lft {
+	text-align: left;
+}
+
+#cntr {
+	text-align: center;
+}
+
+#rght {
+	text-align: right;
+}

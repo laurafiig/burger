@@ -8,19 +8,19 @@ var burger = require("../models/burger.js");
 router.get("/", function(req, res) {
   res.redirect("/burgers");
 });
-
+//////////////
 router.get("/burgers", function(req, res) {
-  burger.all(function(data) {
-    var hbsObject = {
+  burger.selectAll(function(data) {
+    var burgerObject = {
       burgers: data
     };
-    console.log(hbsObject);
-    res.render("index", hbsObject);
+    console.log(burgerObject);
+    res.render("index", burgerObject);
   });
 });
 
 router.post("/burgers/create", function(req, res) {
-  burger.create([
+  burger.insertOne([
     "name", "devoured"
   ], [
     req.body.name, req.body.devoured

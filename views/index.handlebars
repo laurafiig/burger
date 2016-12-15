@@ -1,17 +1,20 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-4">
-			<img src="../public/assets/img/burger.jpg">
+		<div class="col-md-12">
+			<br>
 			<h1>Have a Burger!!</h1>
+			<img src="assets/img/burger.jpg">
+			<hr>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-4">
+		<div class="col-md-4" id="lft">
+			<h2>Burgers you haven't eaten!</h2>
 			<ul>
 				{{#each burgers}}
 					{{#unless this.devoured}}
 						<li>
-							{{this.id }}{{this.burger_name}}
+							{{this.id }}.  {{this.burger_name}}
 							<form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
 								<input type="hidden" name="devoured" value="true">
 								<button type="submit">DEVOUR!</button>
@@ -21,7 +24,7 @@
 				{{/each}}
 			</ul>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4" id="cntr">
 			<h2>Add a Burger</h2>
 			<form class="create-update-form" action="burgers/create" method="POST">
 				<div class="form-group">
@@ -31,7 +34,7 @@
 				<button type="submit">Add Burger</button>
 			</form>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4" id="rght">
 			<h2>Burgers you have eaten!</h2>
 			<ul>
 				{{#each burgers}}
